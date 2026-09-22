@@ -1,0 +1,74 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="fonts.css">
+<style>
+  :root {
+    --paper: #efe8d6;
+    --forest: #16332a;
+    --forest-2: #234e3f;
+    --mustard: #d3931f;
+    --stamp: #a13a2d;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    width: 300px;
+    height: 250px;
+    overflow: hidden;
+    font-family: 'Archivo', Arial, sans-serif;
+    background: var(--forest);
+  }
+  .display { font-family: 'Bebas Neue', Impact, sans-serif; letter-spacing: 0.01em; }
+  .mono { font-family: 'Roboto Mono', 'Courier New', monospace; }
+  .card {
+    position: relative;
+    width: 300px;
+    height: 250px;
+    padding: 20px 18px;
+    background: radial-gradient(120% 130% at 90% -10%, var(--forest-2) 0%, var(--forest) 55%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .eyebrow {
+    color: var(--mustard);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  h1 {
+    margin: 0;
+    color: var(--paper);
+    font-size: 40px;
+    line-height: 0.92;
+  }
+  h1 .accent { color: var(--mustard); }
+  .lede {
+    margin-top: 10px;
+    color: var(--paper);
+    opacity: 0.85;
+    font-size: 12px;
+    line-height: 1.35;
+  }
+  .price {
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+    background: var(--stamp);
+    color: #fff;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transform: rotate(-3deg);
+  }
+</style></head>
+<body>
+  <div class="card">
+    <span class="eyebrow mono">Método de revenda online</span>
+    <h1 class="display">COMPRE BARATO.<br>REVENDA <span class="accent">RÁPIDO.</span></h1>
+    <p class="lede">Primeira venda em até 7 dias</p>
+    <span class="price">R$ 29,90</span>
+  </div>
+</body></html>
