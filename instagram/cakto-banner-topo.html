@@ -1,0 +1,89 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="fonts.css">
+<style>
+  :root {
+    --paper: #efe8d6;
+    --forest: #16332a;
+    --forest-2: #234e3f;
+    --mustard: #d3931f;
+    --stamp: #a13a2d;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    width: 1200px;
+    height: 300px;
+    overflow: hidden;
+    font-family: 'Archivo', Arial, sans-serif;
+    background: var(--forest);
+  }
+  .display { font-family: 'Bebas Neue', Impact, sans-serif; letter-spacing: 0.01em; }
+  .mono { font-family: 'Roboto Mono', 'Courier New', monospace; }
+  .banner {
+    position: relative;
+    width: 1200px;
+    height: 300px;
+    background: radial-gradient(120% 160% at 85% 0%, var(--forest-2) 0%, var(--forest) 60%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 64px;
+  }
+  .left { max-width: 760px; }
+  .eyebrow {
+    color: var(--mustard);
+    font-size: 16px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  h1 {
+    margin: 0;
+    color: var(--paper);
+    font-size: 62px;
+    line-height: 0.95;
+  }
+  h1 .accent { color: var(--mustard); }
+  .lede {
+    margin-top: 14px;
+    color: var(--paper);
+    opacity: 0.85;
+    font-size: 20px;
+  }
+  .right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  .price {
+    background: var(--stamp);
+    color: #fff;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 34px;
+    font-weight: 700;
+    padding: 12px 26px;
+    border-radius: 6px;
+    transform: rotate(-3deg);
+  }
+  .guarantee {
+    color: var(--paper);
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    opacity: 0.8;
+  }
+</style></head>
+<body>
+  <div class="banner">
+    <div class="left">
+      <div class="eyebrow mono">Método de revenda online</div>
+      <h1 class="display">COMPRE BARATO. REVENDA <span class="accent">RÁPIDO.</span></h1>
+      <p class="lede">Sua primeira venda em até 7 dias — sem estoque, sem loja virtual</p>
+    </div>
+    <div class="right">
+      <span class="price">R$ 29,90</span>
+      <span class="guarantee mono">GARANTIA DE 7 DIAS</span>
+    </div>
+  </div>
+</body></html>
