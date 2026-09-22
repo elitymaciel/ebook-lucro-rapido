@@ -1,0 +1,78 @@
+@import url('fonts.css');
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  width: 1080px;
+  height: 1920px;
+  overflow: hidden;
+  font-family: 'Archivo', Arial, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+:root {
+  --paper: #efe8d6;
+  --paper-2: #e4d8bb;
+  --paper-3: #ded0ab;
+  --ink: #1b231d;
+  --ink-soft: #4a5148;
+  --forest: #16332a;
+  --forest-2: #234e3f;
+  --mustard: #d3931f;
+  --mustard-ink: #4a2f0a;
+  --stamp: #a13a2d;
+  --line: #c2b384;
+  --line-strong: #a8996a;
+}
+.display { font-family: 'Bebas Neue', Impact, sans-serif; letter-spacing: 0.02em; }
+.mono { font-family: 'Roboto Mono', 'Courier New', monospace; font-variant-numeric: tabular-nums; }
+.eyebrow {
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 24px;
+  font-weight: 500;
+}
+.story {
+  width: 1080px;
+  height: 1920px;
+  /* top 260px and bottom 260px kept clear-ish of heavy content: Instagram UI (profile chip / reply bar) sits there */
+  padding: 280px 84px 260px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.pageno {
+  position: absolute;
+  bottom: 300px;
+  right: 84px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 20px;
+  color: var(--ink-soft);
+  letter-spacing: 0.08em;
+}
+.brandmark {
+  position: absolute;
+  bottom: 300px;
+  left: 84px;
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: 24px;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+}
+.sticker-zone {
+  border: 3px dashed var(--line-strong);
+  border-radius: 18px;
+  padding: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 22px;
+  color: var(--ink-soft);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  line-height: 1.5;
+  background: var(--paper-2);
+}

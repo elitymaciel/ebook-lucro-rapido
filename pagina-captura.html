@@ -1,0 +1,333 @@
+<title>Lucro Rápido — Instagram Magnético style</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="fonts.css">
+<style>
+  :root {
+    --paper: #efe8d6;
+    --paper-2: #e4d8bb;
+    --paper-3: #ded0ab;
+    --ink: #1b231d;
+    --ink-soft: #4a5148;
+    --forest: #16332a;
+    --forest-2: #234e3f;
+    --mustard: #d3931f;
+    --mustard-ink: #4a2f0a;
+    --stamp: #a13a2d;
+    --line: #c2b384;
+    --line-strong: #a8996a;
+    --shadow: rgba(22, 51, 42, 0.16);
+    --bg-page: #f2efe6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #14170f; --paper-2: #1b1f14; --paper-3: #23281a;
+      --ink: #ece3c9; --ink-soft: #b9b39a;
+      --forest: #8fcaa8; --forest-2: #b7e0c6;
+      --mustard: #e6ab48; --mustard-ink: #241804;
+      --stamp: #e2836f; --line: #3c3d2b; --line-strong: #52543a;
+      --shadow: rgba(0, 0, 0, 0.4); --bg-page: #0f110b;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #14170f; --paper-2: #1b1f14; --paper-3: #23281a;
+    --ink: #ece3c9; --ink-soft: #b9b39a;
+    --forest: #8fcaa8; --forest-2: #b7e0c6;
+    --mustard: #e6ab48; --mustard-ink: #241804;
+    --stamp: #e2836f; --line: #3c3d2b; --line-strong: #52543a;
+    --shadow: rgba(0, 0, 0, 0.4); --bg-page: #0f110b;
+  }
+  :root[data-theme="light"] {
+    --paper: #efe8d6; --paper-2: #e4d8bb; --paper-3: #ded0ab;
+    --ink: #1b231d; --ink-soft: #4a5148;
+    --forest: #16332a; --forest-2: #234e3f;
+    --mustard: #d3931f; --mustard-ink: #4a2f0a;
+    --stamp: #a13a2d; --line: #c2b384; --line-strong: #a8996a;
+    --shadow: rgba(22, 51, 42, 0.16); --bg-page: #f2efe6;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg-page);
+    color: var(--ink);
+    font-family: 'Archivo', Arial, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .display { font-family: 'Bebas Neue', Impact, sans-serif; letter-spacing: 0.02em; text-wrap: balance; }
+  .mono { font-family: 'Roboto Mono', 'Courier New', monospace; font-variant-numeric: tabular-nums; }
+
+  /* countdown bar */
+  .countdown-bar {
+    background: var(--stamp);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 14px 16px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+  }
+  .countdown-bar .clock { font-size: 20px; font-weight: 700; background: rgba(255,255,255,0.15); padding: 4px 10px; border-radius: 4px; }
+
+  .shell {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 36px 24px 64px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 32px;
+    align-items: start;
+  }
+  @media (max-width: 880px) { .shell { grid-template-columns: 1fr; } }
+
+  /* LEFT: hero + optin */
+  .hero-card {
+    background: var(--forest);
+    color: var(--paper);
+    border-radius: 14px;
+    padding: 40px 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(115deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 2px, transparent 2px, transparent 46px);
+    pointer-events: none;
+  }
+  .hero-inner { position: relative; display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; align-items: center; }
+  @media (max-width: 620px) { .hero-inner { grid-template-columns: 1fr; } }
+  .wordmark { font-size: 46px; line-height: 0.92; margin: 0 0 6px; }
+  .wordmark .accent { color: var(--mustard); }
+  .bullets { list-style: none; margin: 22px 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+  .bullets li {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.16);
+    border-radius: 20px;
+    padding: 10px 16px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .bullets .ico { flex: none; }
+
+  .coupon-visual {
+    background: var(--paper-2);
+    color: var(--ink);
+    border-radius: 10px;
+    padding: 22px 20px 18px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 13px;
+    transform: rotate(-2deg);
+    box-shadow: 0 16px 30px -14px rgba(0,0,0,0.5);
+  }
+  .coupon-visual .rhead { text-transform: uppercase; letter-spacing: 0.1em; font-size: 10.5px; color: var(--ink-soft); border-bottom: 1px dashed var(--line-strong); padding-bottom: 8px; margin-bottom: 8px; display: flex; justify-content: space-between; }
+  .coupon-visual .rline { display: flex; justify-content: space-between; padding: 4px 0; }
+  .coupon-visual .rline.total { border-top: 1px dashed var(--line-strong); margin-top: 6px; padding-top: 8px; font-weight: 700; color: var(--forest); }
+  .coupon-visual .lucro { color: var(--stamp); font-weight: 700; }
+
+  /* optin card below hero */
+  .optin-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    margin-top: 20px;
+    padding: 26px 28px 30px;
+    box-shadow: 0 12px 26px -18px var(--shadow);
+  }
+  .optin-head { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+  .optin-head .thumb {
+    width: 56px; height: 56px; border-radius: 8px;
+    background: var(--forest);
+    color: var(--mustard);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Bebas Neue', Impact, sans-serif; font-size: 13px; text-align: center; line-height: 1.05;
+    flex: none;
+  }
+  .optin-head .titles strong { display: block; font-size: 17px; }
+  .optin-head .titles span { font-family: 'Roboto Mono', monospace; font-size: 11.5px; color: var(--ink-soft); }
+
+  .field { margin-bottom: 14px; }
+  .field label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--forest); }
+  .field input {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid var(--line-strong);
+    border-radius: 6px;
+    background: #fff;
+    font-family: 'Archivo', Arial, sans-serif;
+    font-size: 14px;
+    color: var(--ink);
+  }
+  :root[data-theme="dark"] .field input, @media (prefers-color-scheme: dark) { .field input { background: var(--paper-2); color: var(--ink); } }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    background: var(--mustard);
+    color: var(--mustard-ink);
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 14px;
+    padding: 16px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+    margin-top: 6px;
+  }
+  .optin-fine { margin-top: 12px; font-family: 'Roboto Mono', monospace; font-size: 10.5px; color: var(--ink-soft); text-align: center; }
+
+  /* RIGHT column */
+  .side-title { font-size: 20px; color: var(--forest); margin: 6px 0 18px; text-align: center; }
+  .side-title strong { color: var(--stamp); }
+
+  .checklist-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 22px 22px 20px;
+    margin-bottom: 16px;
+  }
+  .checklist-card .eyebrow {
+    font-family: 'Roboto Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 11px;
+    color: var(--forest-2);
+    display: block;
+    margin-bottom: 10px;
+  }
+  .checklist-card ul { margin: 0; padding-left: 0; list-style: none; }
+  .checklist-card li {
+    display: flex; gap: 10px; align-items: flex-start;
+    font-size: 14px; padding: 7px 0;
+    border-bottom: 1px dashed var(--line);
+  }
+  .checklist-card li:last-child { border-bottom: none; }
+  .checklist-card li .check { color: var(--forest-2); flex: none; font-weight: 700; }
+
+  .chapters-card {
+    background: var(--paper-2);
+    border: 1px solid var(--line-strong);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 16px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+  }
+  .chapters-card strong { color: var(--forest); display: block; margin-bottom: 8px; font-family: 'Archivo', Arial, sans-serif; font-size: 14px; }
+
+  .guarantee-block {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    border: 1px solid var(--line-strong);
+    border-radius: 12px;
+    padding: 20px;
+    background: var(--paper);
+  }
+  .guarantee-block .stamp-badge {
+    flex: none;
+    width: 66px; height: 66px;
+    border: 3px solid var(--stamp);
+    border-radius: 50%;
+    color: var(--stamp);
+    display: flex; align-items: center; justify-content: center;
+    text-align: center;
+    font-family: 'Bebas Neue', Impact, sans-serif;
+    font-size: 12px; line-height: 1.1;
+    transform: rotate(-8deg);
+  }
+  .guarantee-block p { margin: 0; font-size: 13.5px; color: var(--ink-soft); }
+  .guarantee-block strong { color: var(--ink); }
+</style>
+
+<div class="countdown-bar mono">
+  <span class="clock">19:56</span>
+  <span>Oferta de lançamento por tempo limitado — cupom LANCA7</span>
+</div>
+
+<div class="shell">
+  <div>
+    <div class="hero-card">
+      <div class="hero-inner">
+        <div>
+          <h1 class="wordmark display">LUCRO<br><span class="accent">RÁPIDO</span></h1>
+          <p class="mono" style="font-size:12px; color:var(--paper-2); letter-spacing:0.08em; text-transform:uppercase; margin:0;">Guia de compra e revenda online</p>
+          <ul class="bullets">
+            <li><span class="ico">🔎</span> Encontre produtos baratos pra revender perto de você</li>
+            <li><span class="ico">💰</span> Calcule o preço certo com a fórmula pronta do lucro</li>
+            <li><span class="ico">📦</span> Feche sua primeira venda em até 7 dias, sem estoque grande</li>
+          </ul>
+        </div>
+        <div class="coupon-visual">
+          <div class="rhead"><span>Cupom de exemplo</span><span>#001</span></div>
+          <div class="rline"><span>Compra</span><span>R$ 30,00</span></div>
+          <div class="rline"><span>Embalagem + frete</span><span>R$ 8,00</span></div>
+          <div class="rline"><span>Revenda</span><span>R$ 95,00</span></div>
+          <div class="rline total"><span>Lucro</span><span class="lucro">+ R$ 57,00</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="optin-card">
+      <div class="optin-head">
+        <div class="thumb display">LUCRO<br>RÁPIDO</div>
+        <div class="titles">
+          <strong>Lucro Rápido — Guia 1.0</strong>
+          <span>PDF · 38 páginas · acesso imediato</span>
+        </div>
+      </div>
+      <form onsubmit="return false;">
+        <div class="field">
+          <label for="nome">Nome completo</label>
+          <input id="nome" type="text" placeholder="Preencha seu nome" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="Preencha seu email" autocomplete="email">
+        </div>
+        <a class="btn-primary" href="https://pay.cakto.com.br/ghyp5xt" target="_blank" rel="noopener">Quero acesso agora — R$29,90 →</a>
+      </form>
+      <div class="optin-fine">Campos de nome/email são opcionais (captura de lead) — o botão leva direto ao checkout seguro do Cakto.</div>
+    </div>
+  </div>
+
+  <div>
+    <p class="side-title display" style="font-size:24px;">O que vem <strong>dentro do guia</strong></p>
+
+    <div class="checklist-card">
+      <span class="eyebrow">Você vai aprender</span>
+      <ul>
+        <li><span class="check">✓</span> Onde encontrar produtos baratos pra revender (6 fontes, da mais fácil à mais lucrativa)</li>
+        <li><span class="check">✓</span> Como escolher o que vende rápido, com 5 critérios simples</li>
+        <li><span class="check">✓</span> Onde anunciar cada tipo de item — tabela comparativa de plataformas</li>
+        <li><span class="check">✓</span> A fórmula de precificação, com exemplo pronto</li>
+        <li><span class="check">✓</span> Fotos e anúncios que vendem sozinhos</li>
+      </ul>
+    </div>
+
+    <div class="chapters-card">
+      <strong>12 capítulos + plano de 7 dias</strong>
+      Da mentalidade e capital inicial até o plano de ação dia a dia — tudo na ordem em que você vai realmente usar, sem enrolação.
+    </div>
+
+    <div class="guarantee-block">
+      <div class="stamp-badge">GARANTIA<br>7 DIAS</div>
+      <p><strong>Risco zero para testar.</strong> Se em 7 dias você aplicar o plano e sentir que não é pra você, devolvemos o valor pago — sem perguntas.</p>
+    </div>
+  </div>
+</div>

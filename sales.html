@@ -1,0 +1,692 @@
+<title>Lucro Rápido — Guia de Compra e Revenda Online</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="fonts.css">
+<style>
+  :root {
+    --paper: #efe8d6;
+    --paper-2: #e4d8bb;
+    --paper-3: #ded0ab;
+    --ink: #1b231d;
+    --ink-soft: #4a5148;
+    --forest: #16332a;
+    --forest-2: #234e3f;
+    --mustard: #d3931f;
+    --mustard-ink: #4a2f0a;
+    --stamp: #a13a2d;
+    --line: #c2b384;
+    --line-strong: #a8996a;
+    --shadow: rgba(22, 51, 42, 0.16);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #14170f;
+      --paper-2: #1b1f14;
+      --paper-3: #23281a;
+      --ink: #ece3c9;
+      --ink-soft: #b9b39a;
+      --forest: #8fcaa8;
+      --forest-2: #b7e0c6;
+      --mustard: #e6ab48;
+      --mustard-ink: #241804;
+      --stamp: #e2836f;
+      --line: #3c3d2b;
+      --line-strong: #52543a;
+      --shadow: rgba(0, 0, 0, 0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #14170f;
+    --paper-2: #1b1f14;
+    --paper-3: #23281a;
+    --ink: #ece3c9;
+    --ink-soft: #b9b39a;
+    --forest: #8fcaa8;
+    --forest-2: #b7e0c6;
+    --mustard: #e6ab48;
+    --mustard-ink: #241804;
+    --stamp: #e2836f;
+    --line: #3c3d2b;
+    --line-strong: #52543a;
+    --shadow: rgba(0, 0, 0, 0.4);
+  }
+  :root[data-theme="light"] {
+    --paper: #efe8d6;
+    --paper-2: #e4d8bb;
+    --paper-3: #ded0ab;
+    --ink: #1b231d;
+    --ink-soft: #4a5148;
+    --forest: #16332a;
+    --forest-2: #234e3f;
+    --mustard: #d3931f;
+    --mustard-ink: #4a2f0a;
+    --stamp: #a13a2d;
+    --line: #c2b384;
+    --line-strong: #a8996a;
+    --shadow: rgba(22, 51, 42, 0.16);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Archivo', Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  .wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .display {
+    font-family: 'Bebas Neue', Impact, sans-serif;
+    letter-spacing: 0.02em;
+    text-wrap: balance;
+  }
+  .mono {
+    font-family: 'Roboto Mono', 'Courier New', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+  .eyebrow {
+    font-family: 'Roboto Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 12px;
+    color: var(--forest-2);
+    font-weight: 500;
+  }
+  .cut {
+    border: none;
+    border-top: 2px dashed var(--line-strong);
+    margin: 0;
+  }
+
+  /* ---------- Top bar ---------- */
+  .topbar {
+    border-bottom: 1px solid var(--line);
+    padding: 18px 0;
+  }
+  .topbar .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .brand {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .brand .mark {
+    font-family: 'Bebas Neue', Impact, sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.04em;
+    color: var(--forest);
+  }
+  .brand .tag {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    border: 1px solid var(--line-strong);
+    padding: 2px 6px;
+    border-radius: 2px;
+  }
+  .topbar .price-peek {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    padding: 72px 0 56px;
+    position: relative;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 48px;
+    align-items: center;
+  }
+  @media (max-width: 720px) {
+    .hero-grid { grid-template-columns: 1fr; }
+  }
+  .hero h1 {
+    font-size: clamp(48px, 8vw, 84px);
+    line-height: 0.94;
+    margin: 14px 0 20px;
+    color: var(--forest);
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--mustard);
+  }
+  .hero p.lede {
+    font-size: 19px;
+    color: var(--ink-soft);
+    max-width: 46ch;
+    margin: 0 0 28px;
+  }
+  .cta-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--forest);
+    color: var(--paper);
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 14px;
+    padding: 16px 26px;
+    border-radius: 3px;
+    text-decoration: none;
+    box-shadow: 4px 4px 0 var(--mustard);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-primary:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--mustard);
+  }
+  .btn-primary:active {
+    transform: translate(0, 0);
+    box-shadow: 2px 2px 0 var(--mustard);
+  }
+  .btn-primary:focus-visible {
+    outline: 3px solid var(--stamp);
+    outline-offset: 3px;
+  }
+  .price-note {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+
+  /* receipt / ledger strip in hero */
+  .receipt {
+    background: var(--paper-2);
+    border: 1px solid var(--line-strong);
+    border-radius: 4px;
+    padding: 22px 22px 18px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 13.5px;
+    box-shadow: 0 10px 24px -14px var(--shadow);
+    transform: rotate(1.2deg);
+  }
+  .receipt .rhead {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 11px;
+    color: var(--ink-soft);
+    border-bottom: 1px dashed var(--line-strong);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .receipt .rline {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+  }
+  .receipt .rline.total {
+    border-top: 1px dashed var(--line-strong);
+    margin-top: 8px;
+    padding-top: 10px;
+    font-weight: 700;
+    color: var(--forest);
+  }
+  .receipt .rline .lucro { color: var(--stamp); font-weight: 700; }
+
+  /* ---------- Sections ---------- */
+  section { padding: 56px 0; }
+  h2.section-title {
+    font-size: clamp(30px, 5vw, 42px);
+    color: var(--forest);
+    margin: 6px 0 8px;
+  }
+  .section-head { margin-bottom: 34px; max-width: 60ch; }
+  .section-head p { color: var(--ink-soft); font-size: 16px; margin: 0; }
+
+  /* pain points */
+  .pains {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+  @media (max-width: 720px) { .pains { grid-template-columns: 1fr; } }
+  .pain-card {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 20px;
+    background: var(--paper-2);
+  }
+  .pain-card .num {
+    font-family: 'Roboto Mono', monospace;
+    color: var(--stamp);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+  .pain-card p { margin: 10px 0 0; color: var(--ink-soft); font-size: 15px; }
+  .pain-card strong { color: var(--ink); display: block; font-size: 16.5px; margin-top: 2px; }
+
+  /* chapter ledger */
+  .ledger {
+    border: 1px solid var(--line-strong);
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--paper-2);
+  }
+  .ledger-row {
+    display: grid;
+    grid-template-columns: 56px 1fr auto;
+    gap: 16px;
+    align-items: baseline;
+    padding: 15px 20px;
+    border-bottom: 1px dashed var(--line);
+  }
+  .ledger-row:last-child { border-bottom: none; }
+  .ledger-row .idx {
+    font-family: 'Roboto Mono', monospace;
+    color: var(--ink-soft);
+    font-size: 13px;
+  }
+  .ledger-row .title { font-weight: 600; font-size: 16px; }
+  .ledger-row .hook { color: var(--ink-soft); font-size: 14px; display: block; font-weight: 400; margin-top: 2px; }
+  .ledger-row .flag {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 11px;
+    color: var(--forest-2);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+  }
+
+  /* who it's for */
+  .fit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  @media (max-width: 720px) { .fit-grid { grid-template-columns: 1fr; } }
+  .fit-col {
+    border-radius: 4px;
+    padding: 22px;
+  }
+  .fit-col.yes { background: var(--paper-2); border: 1px solid var(--forest-2); }
+  .fit-col.no { background: transparent; border: 1px dashed var(--line-strong); }
+  .fit-col .fit-title {
+    font-family: 'Roboto Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+  .fit-col.yes .fit-title { color: var(--forest-2); }
+  .fit-col.no .fit-title { color: var(--ink-soft); }
+  .fit-col ul { margin: 0; padding-left: 18px; }
+  .fit-col li { margin-bottom: 8px; font-size: 15px; }
+
+  /* price tag */
+  .price-block {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0 10px;
+  }
+  .tag {
+    position: relative;
+    background: var(--forest);
+    color: var(--paper);
+    border-radius: 8px;
+    padding: 40px 44px 34px;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 18px 40px -18px var(--shadow);
+  }
+  .tag::before {
+    content: "";
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 26px;
+    height: 26px;
+    background: var(--paper);
+    border: 1px solid var(--line-strong);
+    border-radius: 50%;
+  }
+  .tag::after {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 8px;
+    background: var(--forest);
+    border-radius: 50%;
+    z-index: 1;
+  }
+  .tag .strike {
+    font-family: 'Roboto Mono', monospace;
+    color: var(--mustard);
+    opacity: 0.85;
+    text-decoration: line-through;
+    font-size: 16px;
+  }
+  .tag .big {
+    font-family: 'Bebas Neue', Impact, sans-serif;
+    font-size: 64px;
+    line-height: 1;
+    margin: 6px 0 4px;
+    letter-spacing: 0.02em;
+  }
+  .tag .big .cents { font-size: 32px; }
+  .tag .desc {
+    font-size: 13px;
+    color: var(--paper-2);
+    opacity: 0.85;
+    margin-bottom: 22px;
+  }
+  .tag .btn-primary {
+    background: var(--mustard);
+    color: var(--mustard-ink);
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.25);
+    width: 100%;
+    justify-content: center;
+  }
+  .tag .fine {
+    margin-top: 14px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 11px;
+    color: var(--paper-2);
+    opacity: 0.7;
+  }
+
+  /* guarantee */
+  .guarantee {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    border: 1px solid var(--line-strong);
+    border-radius: 4px;
+    padding: 24px;
+    background: var(--paper-2);
+  }
+  .guarantee .stamp-badge {
+    flex: none;
+    width: 84px;
+    height: 84px;
+    border: 3px solid var(--stamp);
+    border-radius: 50%;
+    color: var(--stamp);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Bebas Neue', Impact, sans-serif;
+    font-size: 13px;
+    line-height: 1.1;
+    transform: rotate(-8deg);
+    letter-spacing: 0.03em;
+  }
+  .guarantee p { margin: 0; color: var(--ink-soft); font-size: 15px; }
+  .guarantee strong { color: var(--ink); }
+
+  /* FAQ */
+  .faq-item {
+    border-bottom: 1px solid var(--line);
+  }
+  .faq-item summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 18px 4px;
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: "+";
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color: var(--forest-2);
+    flex: none;
+  }
+  .faq-item[open] summary::after { content: "–"; }
+  .faq-item .faq-a {
+    margin: 0 0 18px;
+    color: var(--ink-soft);
+    font-size: 15px;
+    max-width: 65ch;
+  }
+
+  /* final CTA */
+  .final-cta {
+    text-align: center;
+    padding: 64px 0 40px;
+  }
+  .final-cta h2 { max-width: 22ch; margin: 0 auto 18px; }
+
+  footer {
+    border-top: 2px dashed var(--line-strong);
+    padding: 28px 0 60px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+  footer .wrap { display: flex; flex-direction: column; gap: 8px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .btn-primary { transition: none; }
+  }
+</style>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand">
+      <span class="mark">LUCRO RÁPIDO</span>
+      <span class="tag">Guia de revenda</span>
+    </div>
+    <div class="price-peek mono">R$ 29,90 · PDF · 38 páginas</div>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Método de compra e revenda</span>
+      <h1 class="display">Compre barato.<br>Revenda rápido.<br><em>Fature ainda essa semana.</em></h1>
+      <p class="lede">Um guia direto ao ponto para encontrar produtos baratos perto de você, anunciar do jeito certo e fechar sua primeira venda em até 7 dias — sem estoque grande, sem loja virtual, sem depender de sorte.</p>
+      <div class="cta-row">
+        <a class="btn-primary" href="https://pay.cakto.com.br/ghyp5xt" target="_blank" rel="noopener">Quero o guia agora →</a>
+        <span class="price-note">Acesso imediato em PDF</span>
+      </div>
+    </div>
+    <div class="receipt">
+      <div class="rhead"><span>Cupom de exemplo</span><span>#001</span></div>
+      <div class="rline"><span>Tênis seminovo (compra)</span><span>R$ 30,00</span></div>
+      <div class="rline"><span>Embalagem + frete</span><span>R$ 8,00</span></div>
+      <div class="rline"><span>Preço de revenda</span><span>R$ 95,00</span></div>
+      <div class="rline total"><span>Lucro na 1ª venda</span><span class="lucro">+ R$ 57,00</span></div>
+    </div>
+  </div>
+</header>
+
+<hr class="cut">
+
+<section id="problema">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">O problema</span>
+      <h2 class="section-title">Você já tentou "ganhar dinheiro na internet" e travou em algum desses pontos</h2>
+    </div>
+    <div class="pains">
+      <div class="pain-card">
+        <span class="num mono">01</span>
+        <strong>Não sabe por onde começar</strong>
+        <p>Todo conteúdo que você encontra fala de curso, afiliado ou tráfego pago — coisas que levam meses para gerar o primeiro real.</p>
+      </div>
+      <div class="pain-card">
+        <span class="num mono">02</span>
+        <strong>Acha que precisa de capital alto</strong>
+        <p>A ideia de "investir" em um negócio online assusta quem tem pouco dinheiro sobrando no fim do mês.</p>
+      </div>
+      <div class="pain-card">
+        <span class="num mono">03</span>
+        <strong>Não sabe o que vender nem onde</strong>
+        <p>Sem um método, é fácil comprar algo que ninguém quer, ou anunciar num lugar errado e não vender nada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="cut">
+
+<section id="conteudo">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">O que está dentro</span>
+      <h2 class="section-title">12 capítulos, na ordem em que você realmente vai usar</h2>
+      <p>Nada de teoria solta — cada capítulo entrega uma decisão prática antes de você seguir para a próxima.</p>
+    </div>
+    <div class="ledger">
+      <div class="ledger-row"><span class="idx mono">01</span><span><span class="title">Por que revenda é a via mais rápida</span><span class="hook">A lógica por trás da arbitragem, sem enrolação</span></span><span class="flag">Base</span></div>
+      <div class="ledger-row"><span class="idx mono">02</span><span><span class="title">Mentalidade e capital</span><span class="hook">Quanto dinheiro você realmente precisa para começar</span></span><span class="flag">Base</span></div>
+      <div class="ledger-row"><span class="idx mono">03</span><span><span class="title">Onde encontrar produtos baratos</span><span class="hook">6 fontes de compra, da mais fácil à mais lucrativa</span></span><span class="flag">Ação</span></div>
+      <div class="ledger-row"><span class="idx mono">04</span><span><span class="title">Como escolher o que vende rápido</span><span class="hook">5 critérios para não comprar produto parado</span></span><span class="flag">Ação</span></div>
+      <div class="ledger-row"><span class="idx mono">05</span><span><span class="title">Onde revender cada tipo de item</span><span class="hook">Tabela comparativa de plataformas</span></span><span class="flag">Ação</span></div>
+      <div class="ledger-row"><span class="idx mono">06</span><span><span class="title">A matemática do lucro</span><span class="hook">Fórmula de precificação com exemplo pronto</span></span><span class="flag">Ferramenta</span></div>
+      <div class="ledger-row"><span class="idx mono">07</span><span><span class="title">Fotos e anúncios que vendem sozinhos</span><span class="hook">Regras de foto, título e descrição</span></span><span class="flag">Ferramenta</span></div>
+      <div class="ledger-row"><span class="idx mono">08</span><span><span class="title">Logística sem dor de cabeça</span><span class="hook">Envio, embalagem e atendimento</span></span><span class="flag">Ação</span></div>
+      <div class="ledger-row"><span class="idx mono">09</span><span><span class="title">De uma venda para um fluxo recorrente</span><span class="hook">Quando e como reinvestir o lucro</span></span><span class="flag">Escala</span></div>
+      <div class="ledger-row"><span class="idx mono">10</span><span><span class="title">Erros comuns que travam iniciantes</span><span class="hook">O que evitar na primeira semana</span></span><span class="flag">Alerta</span></div>
+      <div class="ledger-row"><span class="idx mono">11</span><span><span class="title">Plano de ação de 7 dias</span><span class="hook">Checklist dia a dia até a primeira venda</span></span><span class="flag">Checklist</span></div>
+      <div class="ledger-row"><span class="idx mono">12</span><span><span class="title">Considerações finais</span><span class="hook">Como manter o ciclo funcionando</span></span><span class="flag">Base</span></div>
+    </div>
+  </div>
+</section>
+
+<hr class="cut">
+
+<section id="para-quem">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Para quem é</span>
+      <h2 class="section-title">Esse guia é pra você — se for honesto sobre isso</h2>
+    </div>
+    <div class="fit-grid">
+      <div class="fit-col yes">
+        <div class="fit-title">Faz sentido se você</div>
+        <ul>
+          <li>Quer começar com pouco dinheiro (ou nenhum) e aprender fazendo</li>
+          <li>Topa dedicar algumas horas por semana para garimpar e anunciar</li>
+          <li>Prefere um método simples a uma promessa de "renda passiva"</li>
+          <li>Tem acesso a um celular com câmera e a marketplaces como Mercado Livre, OLX ou Facebook</li>
+        </ul>
+      </div>
+      <div class="fit-col no">
+        <div class="fit-title">Não é pra você se</div>
+        <ul>
+          <li>Procura algo 100% automático, sem nenhum esforço da sua parte</li>
+          <li>Quer resultado garantido sem testar e ajustar no seu contexto</li>
+          <li>Não está disposto a negociar e conversar com compradores</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="cut">
+
+<section id="preco">
+  <div class="wrap">
+    <div class="section-head" style="text-align:center; max-width:none; margin-bottom: 8px;">
+      <span class="eyebrow">Investimento</span>
+      <h2 class="section-title">Custa menos do que o lucro da sua primeira venda</h2>
+    </div>
+    <div class="price-block">
+      <div class="tag">
+        <div class="strike mono">de R$ 67,00</div>
+        <div class="big">R$29<span class="cents">,90</span></div>
+        <div class="desc">Pagamento único · acesso imediato ao PDF</div>
+        <a class="btn-primary" href="https://pay.cakto.com.br/ghyp5xt" target="_blank" rel="noopener">Comprar agora</a>
+        <div class="fine">Link de demonstração — troque pelo seu checkout (Hotmart, Kiwify, Stripe) antes de divulgar</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="garantia">
+  <div class="wrap">
+    <div class="guarantee">
+      <div class="stamp-badge">GARANTIA<br>7 DIAS</div>
+      <p><strong>Risco zero para testar o método.</strong> Se em 7 dias você aplicar o plano de ação e sentir que não é para você, devolvemos o valor pago — sem perguntas.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="cut">
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Perguntas frequentes</span>
+      <h2 class="section-title">Antes de comprar</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary>Preciso de dinheiro para começar?</summary>
+        <p class="faq-a">Não é obrigatório. O Capítulo 2 mostra como começar do zero, vendendo itens que você já tem em casa, e como escalar aos poucos com R$ 50 a R$ 300 assim que você validar o processo.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Funciona em qualquer cidade?</summary>
+        <p class="faq-a">Sim. O método usa fontes de compra e plataformas de venda disponíveis em praticamente qualquer lugar do Brasil (grupos de desapego, brechós, Mercado Livre, OLX e Facebook Marketplace).</p>
+      </details>
+      <details class="faq-item">
+        <summary>Quanto tempo até a primeira venda?</summary>
+        <p class="faq-a">O Capítulo 11 traz um plano de 7 dias, do zero até a entrega da primeira venda. O prazo real depende do seu ritmo e da sua dedicação.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Em que formato recebo o material?</summary>
+        <p class="faq-a">Um PDF de 38 páginas, leitura direta em qualquer celular, tablet ou computador, sem necessidade de aplicativo específico.</p>
+      </details>
+      <details class="faq-item">
+        <summary>E se eu não gostar?</summary>
+        <p class="faq-a">Você tem 7 dias de garantia incondicional a partir da compra.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="wrap">
+    <span class="eyebrow">Pronto para começar</span>
+    <h2 class="section-title display">Sua primeira venda pode sair ainda essa semana</h2>
+    <div class="cta-row" style="justify-content:center; margin-top: 18px;">
+      <a class="btn-primary" href="https://pay.cakto.com.br/ghyp5xt" target="_blank" rel="noopener">Quero o guia por R$ 29,90 →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>LUCRO RÁPIDO — Guia de Compra e Revenda Online</span>
+    <span>Material educacional. Resultados dependem de execução, mercado local e esforço individual — não há promessa de ganho garantido.</span>
+  </div>
+</footer>
